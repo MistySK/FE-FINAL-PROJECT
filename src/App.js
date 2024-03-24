@@ -22,9 +22,13 @@ return (
   //<div> to set up links for different pages/views of the site
   //<Switch> allows us to have multiple routes pointing to one component but only render one at a time
   <Router>
+    <div>
     <header>
+      <img src="/Assets/670284.jpg" alt="Left Image" className="header-image left" />
       <h1>Daily Wellness Journal</h1>
+      <img src="/Assets/670284.jpg" alt="Right Image" className="header-image right" />
     </header>
+    </div>
     
     <div>
       <nav>
@@ -43,6 +47,8 @@ return (
       </ul>
     </nav>
 
+   
+
     <Switch>
       <Route path="/inspiration">
         <Inspiration inspiration={Inspiration} />
@@ -51,6 +57,12 @@ return (
         <Journal journal={Journal} />
       </Route>
       <Route path="/">
+        
+        <div className="hero-container">
+              <img src="/Assets/River-landscape1.jpg" alt="Hero Image" />
+              <div className="caption">This picture was taken at a vineyard in Abingdon, VA. 
+              It is truly my happy place.</div>
+        </div>
         <Home  />
       </Route>
     </Switch>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Entry.css'
 
 const Entry = ({ data, addNewEntry, deleteEntry, updateJournal }) => {
     // Destructure the entry data
@@ -11,13 +11,15 @@ const Entry = ({ data, addNewEntry, deleteEntry, updateJournal }) => {
     };
 
     return (
-        <div>
-            <h3>Date: {date}</h3>
+        <div className='entry-container'>
+            <h5 className='entry-title'>Date: {date}</h5>
+            <div className='entry-details'>
             <p>Move: {move}</p>
             <p>Eat: {eat}</p>
             <p>Hydrate: {hydrate}</p>
             <p>Nourish: {nourish}</p>
-            <button onClick={handleDelete}>Delete</button>
+            </div>
+            <button className='delete-button' onClick={handleDelete}>Delete</button>
         </div>
     );
 }

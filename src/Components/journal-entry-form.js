@@ -1,5 +1,6 @@
 import React from 'react';
 import Entry from './Entry';
+import './journal-entry-form.css'
 
 export default class JournalEntryForm extends React.Component {
     constructor(props) {
@@ -55,7 +56,9 @@ export default class JournalEntryForm extends React.Component {
     
 render() {
     return (
-        <div>
+        <div className='entry-form'>
+            <label>Date</label>
+            <div>
             <input
                 type="date"
                 id="entryDate"  // Add an id attribute
@@ -63,36 +66,49 @@ render() {
                 onChange={this.handleDateChange}
                 value={this.state.dateValue}
             />
+            </div>
+            <label>Move Your Body</label>
+            <div>
             <input
                 type="text"
                 id="entryMove"  // Add an id attribute
-                placeholder="Move Your Body"
+                placeholder="Get up and move!"
                 onChange={this.handleMoveChange}
                 value={this.state.moveValue}
             />
+            </div>
+            <label>Nourish Your Body</label>
+            <div>
             <input
                 type="text"
                 id="entryEat"  // Add an id attribute
-                placeholder="Feed Your Body"
+                placeholder="What did you eat today?"
                 onChange={this.handleEatChange}
                 value={this.state.eatValue}
             />
+            </div>
+            <label>Hydrate Your Body</label>
+            <div>
             <input
                 type="number"
                 id="entryHydrate"  // Add an id attribute
-                placeholder="Hydrate Your Body"
+                placeholder="How many ounces of water have you drank today?"
                 onChange={this.handleHydrateChange}
                 value={this.state.hydrateValue}
             />
+            </div>
+            <label>Self Care</label>
+            <div>
             <input
                 type="text"
                 id="entryNourish"  // Add an id attribute
-                placeholder="Nourish Your Mind & Soul"
+                placeholder="How have you nourished your mind & soul?"
                 onChange={this.handleNourishChange}
                 value={this.state.nourishValue}
             />
+            </div>
             <button onClick={this.handleClick}>Add Entry</button>
-        </div>
+            </div>
         );
         }
     }

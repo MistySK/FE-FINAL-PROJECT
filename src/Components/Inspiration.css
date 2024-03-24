@@ -1,0 +1,29 @@
+.inspiration-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inspiration-section {
+    display: flex;
+    margin-bottom: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  
+  .inspiration-image {
+    flex: 1; /* Image takes up remaining space */
+  }
+  
+  .inspiration-text,
+  .inspiration-image {
+    flex: 1; /* Each section takes up equal space */
+    display: flex;
+    align-items: center; /* Vertically center content */
+  }
+ 
+  .inspiration-image img {
+    width: auto; /* Make sure the image fills its container */
+    max-height: 300px; /* Maintain aspect ratio */
+    height: auto;
+  }

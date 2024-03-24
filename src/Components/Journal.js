@@ -1,6 +1,7 @@
 import React from 'react';
 import JournalEntryForm from './journal-entry-form';
 import Entry from './Entry';
+import './journal-entry-form.css'
 
 //mock API endpoint
 
