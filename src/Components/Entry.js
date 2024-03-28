@@ -5,15 +5,15 @@ const Entry = ({ data, addNewEntry, deleteEntry, updateJournal }) => {
     // Destructure the entry data
     const { date, move, eat, hydrate, nourish } = data;
 
-    const handleDelete = () => {
+    const handleDelete = (event) => {
         // Call the deleteEntry function passed as a prop
-        deleteEntry(data);
+        deleteEntry(event,data);
     };
 
     return (
-        <div className='entry-container'>
+        <div className='entry-container mt-2'>
             <h5 className='entry-title'>Date: {date}</h5>
-            <div className='entry-details'>
+            <div className="entry-details mt-2 mb-2">
             <p>Move: {move}</p>
             <p>Eat: {eat}</p>
             <p>Hydrate: {hydrate}</p>
@@ -26,31 +26,3 @@ const Entry = ({ data, addNewEntry, deleteEntry, updateJournal }) => {
 
 export default Entry;
 
-//add a delete button
-/*class Entry extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleDelete = this.handleDelete.bind(this);
-    }
-
-    handleDelete(e) {
-        e.preventDefault();
-        this.props.deleteEntry(this.props.data);
-    }
-
-    render() {
-        const { data } = this.props;
-        return (
-            <div>
-                <p>Date: {data.date}</p>
-                <p>Move: {data.move}</p>
-                <p>Eat: {data.eat}</p>
-                <p>Hydrate: {data.hydrate}</p>
-                <p>Nourish: {data.nourish}</p>
-                <button onClick={this.handleDelete}>Delete</button>
-            </div>
-        );
-    }
-}
-
-export default Entry;*/

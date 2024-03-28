@@ -12,6 +12,8 @@ function Home() {
             This platform serves as a gentle reminder to not only prioritize your well-being 
             but also to extend yourself grace along the journey.
             </p>
+            <br></br>
+            <br></br>
           </div>
         </div>
       );

@@ -12,6 +12,7 @@ import {
 import Inspiration from './Components/Inspiration';
 import Home from './Components/Home';
 import Journal from  './Components/Journal'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //need to add data that I want to include (this will be in place of Hello World
@@ -25,7 +26,7 @@ return (
     <div>
     <header>
       <img src="/Assets/670284.jpg" alt="Left Image" className="header-image left" />
-      <h1>Daily Wellness Journal</h1>
+      <h1 className="header-title">Daily Wellness Journal</h1>
       <img src="/Assets/670284.jpg" alt="Right Image" className="header-image right" />
     </header>
     </div>
@@ -45,9 +46,8 @@ return (
             <Link to="/journal">Journal</Link> 
           </li>
       </ul>
-    </nav>
+</nav>
 
-   
 
     <Switch>
       <Route path="/inspiration">
@@ -66,6 +66,12 @@ return (
         <Home  />
       </Route>
     </Switch>
+
+     {/* Footer */}
+     <footer className="footer">
+          <p>2024 Daily Wellness Journal. Misty Smith-Klein </p>
+        </footer>
+
 </div>
   </Router>
 );

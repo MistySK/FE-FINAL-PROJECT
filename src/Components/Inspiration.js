@@ -4,6 +4,11 @@ import './Inspiration.css';
 function Inspiration() {
   return (
     <div className="inspiration-container">
+          {/* Header and paragraph */}
+          <div className="col-md-12 text-center mt-2 mb-2">
+        <h2>Inspiration!</h2>
+        <p>Here you'll find some inspiration and "the whys" to help you on your wellness journey.</p>
+      </div>
       {/* First section */}
       <div className="inspiration-section">
       <div className="inspiration-content">

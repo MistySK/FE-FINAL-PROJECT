@@ -1,0 +1,34 @@
+.journal-container {
+    display: flex; /* Use flexbox to arrange items horizontally */
+    flex-direction: row; /* Align items in a row */
+    align-items: flex-start; /* Align items at the top */
+}
+  
+  /* Style for the container that holds the form */
+  .journal-form-container {
+    flex: 1; /* Take up remaining space */
+    margin-right: 50px; /* Add margin on the right for spacing */
+  }
+  
+  /* Style for the container that holds the image */
+  .journal-image-container {
+    margin-left: 60px; /* Adjust the margin as needed */
+    margin-top:5em;
+  }
+
+  /* Style for the image */
+  .journal-image-container img {
+    width: 50%; 
+    height: auto;
+    margin-left: auto; /* Adjust the margin as needed */
+    margin-right: auto;
+    display: block; /* Ensure the image behaves as a block element */
+    margin-top: 10px;
+}
+
+.image-container {
+  margin-left: 60px; /* Push the image to the right */
+}
+
+
+

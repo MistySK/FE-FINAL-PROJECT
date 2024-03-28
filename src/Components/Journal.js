@@ -2,20 +2,9 @@ import React from 'react';
 import JournalEntryForm from './journal-entry-form';
 import Entry from './Entry';
 import './journal-entry-form.css'
+import journalImage from './Angel-Wings.jpg'; // Import the image
+import './Entry.css';
 
-//mock API endpoint
-
-/*function Journal() {
-    return (
-        <div>
-        <h2> Daily Journal </h2>
-          <div>
-            <h2> H2 </h2>
-            <p>Copy to explain page</p>
-          </div>
-        </div>
-      );
-}*/
 
 const JOURNAL_ENDPOINT = 'https://65fef105b2a18489b386c78a.mockapi.io/api/journal/entries';
 
@@ -31,7 +20,7 @@ export default class Journal extends React.Component {
   
   
     render() {
-      const entries = this.state.entries.map((entry, index)  => (
+      const entries = this.state.entries.reverse().map((entry, index)  => (
         <Entry
         key={index}
         data={entry}
@@ -40,12 +29,45 @@ export default class Journal extends React.Component {
         />
         ));
   
-        return (
-            <div>
-                <JournalEntryForm addNewEntry={this.addNewEntry} />
-                {entries}
+        /*return (
+              <div className="journal-container">
+                <div className="journal-form-container">
+                  <JournalEntryForm addNewEntry={this.addNewEntry} />
+                </div>
+                <div className="journal-image-container">
+                  <img style={{width: "50px"}} src={journalImage} alt="doors with painted angel wings" />
+              </div>
+              {entries}
             </div>
-        );
+        );*/
+
+        return (
+          <div className="container">
+            <div className="row">
+            <div className="col-md-12 text-center mt-4 mb-2">
+              <h2>A Place to Track Your Day</h2>
+              <p>This is a judgment-free zone. That means if you have a great day, 
+                then celebrate! If you have a bad day, give yourself grace and know you did your
+                best. Start tomorrow fresh!</p>
+           </div>
+              <div className="col-md-6">
+                <div className="journal-form-container">
+                  <JournalEntryForm addNewEntry={this.addNewEntry} />
+                </div>
+              </div>
+              <div className="col-md-6 text-center">
+              <div className="journal-image-container"> {/* Added image-wrapper class */}
+                  <img className="my-3" style={{width: "75%"}} src={journalImage} alt="doors with painted angel wings" />
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-12">
+                {entries}
+              </div>
+            </div>
+          </div>
+        ); 
     }
   
     componentDidMount() {
@@ -60,14 +82,28 @@ export default class Journal extends React.Component {
   
     deleteEntry(e, entry) {
      e.preventDefault();
-      const index = this.state.entries.indexOf(entry);
-      const updatedEntries = [...this.state.entries]; // make a copy of the array
-        updatedEntries.splice(index, 1); //remove the entry
-      this.updateJournal(entry).then(() => {
-          this.setState({
-            entries: updatedEntries // Update state with the modified entries array
-        });
-    });
+console.log("Entry data?:", entry);
+
+this.deleteAJournal(entry)
+.then(()=>{
+   let updatedEntries = this.state.entries.filter(function(item){
+       return item.id !== entry.id; 
+       //returns true if we want to keep the item (it's not the one we're deleting)
+       })
+   this.setState({
+    entries : updatedEntries
+})
+});
+
+
+    //   const index = this.state.entries.indexOf(entry);
+    //   const updatedEntries = [...this.state.entries]; // make a copy of the array
+    //     updatedEntries.splice(index, 1); //remove the entry
+    //   this.updateJournal(entry).then(() => {
+    //       this.setState({
+    //         entries: updatedEntries // Update state with the modified entries array
+    //     });
+    // });
 };
 
   
@@ -105,7 +141,8 @@ export default class Journal extends React.Component {
 
     
     updateJournal(journal) {
-      return fetch(`${JOURNAL_ENDPOINT}/${journal._id}`, {
+      console.log("Journey data?:", journal);
+      return fetch(`${JOURNAL_ENDPOINT}/${journal.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -113,6 +150,16 @@ export default class Journal extends React.Component {
         body: JSON.stringify(journal)
       });
   }
+
+  deleteAJournal(journal) {
+    console.log("Delete Journey data?:", journal);
+    return fetch(`${JOURNAL_ENDPOINT}/${journal.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+}
 }
 
 

@@ -1,7 +1,7 @@
 .inspiration-container {
     display: flex;
     flex-direction: column;
-    padding-top: 40px;
+    padding-top: 20px;
   }
   
   .inspiration-section {
@@ -21,6 +21,7 @@
     flex: 1; /* Each section takes up equal space */
     display: flex;
     align-items: center; /* Vertically center content */
+    font-size: medium;
   }
  
   .inspiration-image img {
