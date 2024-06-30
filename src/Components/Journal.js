@@ -28,18 +28,6 @@ export default class Journal extends React.Component {
         deleteEntry={this.deleteEntry} 
         />
         ));
-  
-        /*return (
-              <div className="journal-container">
-                <div className="journal-form-container">
-                  <JournalEntryForm addNewEntry={this.addNewEntry} />
-                </div>
-                <div className="journal-image-container">
-                  <img style={{width: "50px"}} src={journalImage} alt="doors with painted angel wings" />
-              </div>
-              {entries}
-            </div>
-        );*/
 
         return (
           <div className="container">
@@ -50,14 +38,14 @@ export default class Journal extends React.Component {
                 then celebrate! If you have a bad day, give yourself grace and know you did your
                 best. Start tomorrow fresh!</p>
            </div>
-              <div className="col-md-6">
-                <div className="journal-form-container">
+              <div className="col-md-6 col-sm-12">
+                <div className="journal-form-container equal-height">
                   <JournalEntryForm addNewEntry={this.addNewEntry} />
                 </div>
               </div>
-              <div className="col-md-6 text-center">
-              <div className="journal-image-container"> {/* Added image-wrapper class */}
-                  <img className="my-3" style={{width: "75%"}} src={journalImage} alt="doors with painted angel wings" />
+              <div className="col-md-6 col-sm-12">
+              <div className="journal-image-container equal-height">
+                  <img className="my-3 img-fluid" src={journalImage} alt="doors with painted angel wings" />
                 </div>
               </div>
             </div>

@@ -1,5 +1,10 @@
-body{
-   color: navy;
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: navy; /* Maintain existing body styles */
 }
 
 header {
@@ -73,11 +78,13 @@ nav {
  .hero-container {
   text-align: center; /* Center the image horizontally */
   width: 100%;
+  overflow: hidden; /* Ensure no horizontal overflow */
 }
 
 .hero-container img {
   width: 100%; /* Make sure the image doesn't exceed its container */
-  height: 700px;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 700px; /* Limit maximum height */
 }
 
 footer {

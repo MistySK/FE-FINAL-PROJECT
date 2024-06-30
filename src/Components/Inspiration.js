@@ -31,7 +31,7 @@ function Inspiration() {
       </div>
 
       {/* Second section */}
-      <div className="inspiration-section">
+      <div className="inspiration-section second-section">
       <div className="inspiration-image">
           {/* Image for the second section */}
           <img src="/Assets/fruit.jpg" alt="Fruit" />
@@ -73,7 +73,7 @@ function Inspiration() {
 
 
       {/* Fourth section */}
-      <div className="inspiration-section">
+      <div className="inspiration-section fourth-section">
       <div className="inspiration-image">
           {/* Image for the second section */}
           <img src="/Assets/wine1.jpg" alt="Wine" />

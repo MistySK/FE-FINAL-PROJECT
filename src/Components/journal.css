@@ -1,34 +1,59 @@
-.journal-container {
-    display: flex; /* Use flexbox to arrange items horizontally */
-    flex-direction: row; /* Align items in a row */
-    align-items: flex-start; /* Align items at the top */
+.equal-height {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-height: 500px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  padding: 20px;
+}
+
+/* Set the container to flex so that both form and image share the same height */
+.journal-form-container, .journal-image-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content horizontally */
+  max-height: 500px; /* Set a maximum height */
+  height: 100%; /* Ensure they take up 100% height of the parent */
+  overflow: hidden; /* Hide overflow if needed */
+  padding: 20px; /* Add padding for spacing */
 }
   
-  /* Style for the container that holds the form */
-  .journal-form-container {
-    flex: 1; /* Take up remaining space */
-    margin-right: 50px; /* Add margin on the right for spacing */
-  }
-  
-  /* Style for the container that holds the image */
-  .journal-image-container {
-    margin-left: 60px; /* Adjust the margin as needed */
-    margin-top:5em;
-  }
-
-  /* Style for the image */
-  .journal-image-container img {
-    width: 50%; 
-    height: auto;
-    margin-left: auto; /* Adjust the margin as needed */
-    margin-right: auto;
-    display: block; /* Ensure the image behaves as a block element */
-    margin-top: 10px;
+/* Ensure image fits within the container while maintaining its aspect ratio */
+.journal-image-container img {
+  max-width: 100%; /* Ensure the image fits within the container width */
+  height: auto; /* Adjust height automatically */
+  object-fit: contain; /* Ensure image fits within the container without being distorted */
 }
 
-.image-container {
-  margin-left: 60px; /* Push the image to the right */
+/* General styling */
+input, .entry-form {
+  width: 100%; /* Make inputs fill the width of their container */
+  padding: 8px; /* Add some padding for spacing */
+  margin-bottom: 15px; /* Add space below each input */
+  border: 1px solid #ccc; /* Add a border for visual separation */
+  border-radius: 4px; /* Add rounded corners for a softer look */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
+.entry-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 
+.entry-form button {
+  width: 100%; /* Ensure full width */
+  padding: 10px; /* Add padding */
+  background-color: #007bff; /* Set button background color */
+  color: #fff; /* Set button text color */
+  border: none; /* Remove button border */
+  border-radius: 4px; /* Add rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  margin-top: auto; /* Ensure the button stays at the bottom */
+}
 
+.entry-form button:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+}

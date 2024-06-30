@@ -1,31 +1,68 @@
 .inspiration-container {
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout for small screens */
+    gap: 20px;
+    padding: 20px;
   }
   
   .inspiration-section {
-    display: flex;
-    margin-bottom: 40px;
-    padding-left: 100px;
-    padding-right: 100px;
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout for small screens */
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0; /* Adjust the padding for each section */
   }
 
-  
+  .inspiration-content,
   .inspiration-image {
-    flex: 1; /* Image takes up remaining space */
-  }
-  
-  .inspiration-text,
-  .inspiration-image {
-    flex: 1; /* Each section takes up equal space */
     display: flex;
-    align-items: center; /* Vertically center content */
-    font-size: medium;
+    flex-direction: column;
+    align-items: center;
   }
- 
+  
   .inspiration-image img {
-    width: auto; /* Make sure the image fills its container */
-    max-height: 300px; /* Maintain aspect ratio */
-    height: auto;
+    width: 100%; /* Make sure the image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent image from stretching beyond its container */
+    object-fit: contain; /* Ensures the image scales correctly without distortion */
   }
+
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+  .inspiration-section {
+    grid-template-columns: 1fr 1fr; /* Two-column layout for medium to large screens */
+  }
+}
+
+/* Specific styling for the second section to display image below text on small screens */
+@media (max-width: 767px) {
+  .inspiration-section.second-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inspiration-section.second-section .inspiration-image {
+    order: 2; /* Move image below text */
+  }
+
+  .inspiration-section.second-section .inspiration-content {
+    order: 1; /* Move text above image */
+  }
+}
+
+/* Specific styling for the fourth section to display image below text on small screens */
+@media (max-width: 767px) {
+  .inspiration-section.fourth-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inspiration-section.fourth-section .inspiration-image {
+    order: 2; /* Move image below text */
+  }
+
+  .inspiration-section.-section .inspiration-content {
+    order: 1; /* Move text above image */
+  }
+}

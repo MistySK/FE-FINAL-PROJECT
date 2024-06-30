@@ -56,7 +56,8 @@ export default class JournalEntryForm extends React.Component {
     
 render() {
     return (
-        <div className='entry-form'>
+        <div className='entry-form-container'>
+            <div className='entry-form'>
             <label>Date</label>
             <div>
             <input
@@ -109,6 +110,7 @@ render() {
             </div>
             <button onClick={this.handleClick}>Add Entry</button>
             </div>
+           </div> 
         );
         }
     }
